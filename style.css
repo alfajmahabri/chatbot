@@ -1,1 +1,198 @@
+/* Import Google font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; /* Changed font-family to Montserrat */
+}
+
+:root {
+  /* Changed primary color to a blue shade */
+  --primary-color: #0066FF;
+  /* Changed text color to black */
+  --text-color: #000000;
+  /* Changed icon color to a light gray */
+  --icon-color: #ACACBE;
+  /* Changed icon hover background color to a darker gray */
+  --icon-hover-bg: #5b5e71;
+  /* Changed placeholder color to a light gray */
+  --placeholder-color: #ACACBE;
+  /* Changed background color to light theme (#F5F5F5) */
+  --chat-bg: #F5F5F5;
+  /* Removed outgoing and incoming chat background variables */
+  /* Removed outgoing and incoming chat border variables */
+}
+
+/* Removed box-shadow and backdrop-filter from .chat-container */
+.chat-container {
+  overflow-y: auto;
+  max-height: 100vh;
+  padding-bottom: 150px;
+  /* Changed to light theme background color */
+  background-color: var(--chat-bg);
+  margin: 20px;
+}
+
+/* Removed scrollbar styles */
+:where(.chat-container, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-track {
+  background: var(--incoming-chat-bg);
+  border-radius: 25px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb {
+  background: var(--icon-color);
+  border-radius: 25px;
+}
+
+/* Removed .default-text styles */
+
+.chats-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat {
+  /* Each chat will appear inside a rounded rectangle */
+  background-color: var(--incoming-chat-bg);
+  border: 1px solid var(--incoming-chat-border);
+}
+
+.chat .chat-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+span.material-symbols-rounded {
+  user-select: none;
+  cursor: pointer;
+}
+
+.chat .chat-content span {
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--icon-color);
+  visibility: hidden;
+}
+
+.chat:hover .chat-content:not(:has(.typing-animation), :has(.error)) span {
+  visibility: visible;
+}
+
+.chat .chat-details {
+  display: flex;
+  align-items: center;
+}
+
+.chat .chat-details img {
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.chat .chat-details p {
+  white-space: pre-wrap;
+  font-size: 1.05rem;
+  padding: 0 50px 0 25px;
+  color: var(--text-color);
+  word-break: break-word;
+}
+
+.chat .chat-details p.error {
+  color: #e55865;
+}
+
+.chat .typing-animation {
+  padding-left: 25px;
+  display: inline-flex;
+}
+
+.typing-animation .typing-dot {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  margin: 0 3px;
+  opacity: 0.7;
+  background: var(--text-color);
+  animation: animateDots 1.5s var(--delay) ease-in-out infinite;
+}
+
+.typing-animation .typing-dot:first-child {
+  margin-left: 0;
+}
+
+@keyframes animateDots {
+  0%,44% {
+    transform: translateY(0px);
+  }
+  28% {
+    opacity: 0.4;
+    transform: translateY(-6px);
+  }
+  44% {
+    opacity: 0.2;
+  }
+}
+
+/* Typing container styling */
+.typing-container {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  padding: 20px; 
+  justify-content: center;
+  background: var(--outgoing-chat-bg);
+  border-top: 1px solid var(--incoming-chat-border);
+  margin: 20px; 
+}
+
+.typing-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.typing-textarea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px; /* Added margin to the typing textarea */
+}
+
+.typing-textarea textarea {
+  resize: none;
+  height: 100%;
+  border: 1px solid #000000; /* Added border */
+  padding: 10px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  border-radius: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: var(--incoming-chat-bg);
+  outline: none;
+}
+
+.typing-textarea textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+
+.delete-icon {
+  background: #FF3366; /* Change the background color of the delete icon */
+  color: #FFFFFF; /* Change the color of the delete icon */
+}
+
+/* Reponsive Media Query */
+@media screen and (max-width: 600px) {
+  /* ... */
+}

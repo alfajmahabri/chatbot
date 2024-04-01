@@ -1,73 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <!-- Add your CSS file here -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix Ai</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <!-- Add your navigation links here -->
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="chat-container">
+    <div class="chat incoming">
+      <!-- Add more chat messages here -->
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Your Name</h1>
-        <p>Web Developer | Designer | Creative Enthusiast</p>
-        <!-- Add a call-to-action button here -->
-        <a href="#contact" class="btn">Get in Touch</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            <!-- Add a brief introduction about yourself here -->
-        </p>
-        <!-- Add more details about yourself, your skills, or any other information you want to showcase -->
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <!-- Showcase your projects here with images and descriptions -->
-        <div class="project">
-            <img src="project1.jpg" alt="Project 1">
-            <h3>Project Title 1</h3>
-            <p>Project Description 1</p>
+  <div class="typing-container">
+    <div class="typing-content">
+      <div class="typing-textarea">
+        <textarea id="chat-input" spellcheck="false" placeholder="Type your message here..." required></textarea>
+      </div>
+      <div class="typing-controls">
+        <div class="buttons-container">
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+          <span id="delete-btn" class="material-symbols-rounded">delete</span>
         </div>
-        <div class="project">
-            <img src="project2.jpg" alt="Project 2">
-            <h3>Project Title 2</h3>
-            <p>Project Description 2</p>
-        </div>
-        <!-- Add more project items as needed -->
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>
-            <!-- Add contact information or a contact form here -->
-        </p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
-
-    <!-- Add your JavaScript files here (if needed) -->
-    <script src="scripts.js"></script>
+         </div>
+    </div>
+  </div>
 </body>
 </html>
